@@ -130,13 +130,59 @@
 <section id="register">
   <h2>Enter the competition</h2>
   <p class="lead">Submit your details and contestant profile.</p>
-  <form class="register" id="regForm">
-    <input type="text" name="name" placeholder="Full name" required>
-    <input type="email" name="email" placeholder="Email address" required>
-    <input type="text" name="city" placeholder="City, country" required>
-    <input type="text" name="insta" placeholder="Instagram handle">
-    <button class="btn solid" type="submit">Submit registration</button>
-    <div class="msg" id="regMsg" role="status"></div>
+  <form
+  class="register"
+  id="regForm"
+  action="https://formspree.io/f/YOUR_FORM_ID"
+  method="POST"
+>
+
+  <input
+    type="text"
+    name="name"
+    placeholder="Full name"
+    required
+  >
+
+  <input
+    type="email"
+    name="email"
+    placeholder="Email address"
+    required
+  >
+
+  <input
+    type="text"
+    name="city"
+    placeholder="City, country"
+    required
+  >
+
+  <input
+    type="text"
+    name="insta"
+    placeholder="Instagram handle"
+  >
+
+  <textarea
+    name="message"
+    placeholder="Message / Contest information"
+    rows="4"
+    style="width:100%;background:var(--bg-2);border:1px solid var(--line);color:var(--paper);padding:.8rem 1rem;border-radius:10px;font:500 1rem var(--body)"
+  ></textarea>
+
+  <input
+    type="hidden"
+    name="_subject"
+    value="New York Runway Star - New Contestant Registration"
+  >
+
+  <button class="btn solid" type="submit">
+    Submit registration
+  </button>
+
+  <div class="msg" id="regMsg" role="status"></div>
+
   </form>
 </section>
 
