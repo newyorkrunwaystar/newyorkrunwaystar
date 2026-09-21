@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -130,22 +128,14 @@
 <section id="register">
   <h2>Enter the competition</h2>
   <p class="lead">Submit your details and contestant profile.</p>
-  <!-- modify this form HTML and place wherever you want your form -->
-<form class="register" id="regForm"
-      action="https://formspree.io/f/xnpnpnjp"
-      method="POST">
-
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
-</form>
+  <form class="register" id="regForm">
+    <input type="text" name="name" placeholder="Full name" required>
+    <input type="email" name="email" placeholder="Email address" required>
+    <input type="text" name="city" placeholder="City, country" required>
+    <input type="text" name="insta" placeholder="Instagram handle">
+    <button class="btn solid" type="submit">Submit registration</button>
+    <div class="msg" id="regMsg" role="status"></div>
+  </form>
 </section>
 
 <section id="voting">
@@ -270,7 +260,7 @@
   });
   document.getElementById("voteClose").addEventListener("click", () => dlg.close());
 
-  // ---- Registration (demo: nothing is sent anywhere) ----
+  
 </script>
 </body>
 </html>
