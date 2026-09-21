@@ -3,1005 +3,298 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>New York Runway Star 2026</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,700;1,500&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
-
 <style>
-:root{
-  --bg:#170f1c;
-  --bg-2:#20152a;
-  --paper:#f4ede4;
-  --muted:#b9aebf;
-  --accent:#e8336d;
-  --gold:#d9b26f;
-  --line:rgba(244,237,228,.16);
-  --display:"Bodoni Moda",Georgia,serif;
-  --body:"Manrope",system-ui,sans-serif;
-}
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0
-}
-
-html{
-  scroll-behavior:smooth
-}
-
-body{
-  background:var(--bg);
-  color:var(--paper);
-  font-family:var(--body);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased
-}
-
-img{
-  max-width:100%;
-  display:block
-}
-
-a{
-  color:inherit;
-  text-decoration:none
-}
-
-:focus-visible{
-  outline:2px solid var(--gold);
-  outline-offset:3px
-}
-
-header.top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:1rem 1.25rem;
-  border-bottom:1px solid var(--line)
-}
-
-.logo{
-  font-family:var(--display);
-  font-weight:700;
-  font-size:1.05rem
-}
-
-header.top nav{
-  display:flex;
-  gap:.6rem
-}
-
-.btn{
-  display:inline-block;
-  border:1px solid var(--paper);
-  color:var(--paper);
-  background:transparent;
-  padding:.7rem 1.2rem;
-  border-radius:999px;
-  font:700 .9rem var(--body);
-  cursor:pointer;
-  transition:.2s
-}
-
-.btn:hover{
-  background:var(--paper);
-  color:var(--bg)
-}
-
-.btn.solid{
-  background:var(--accent);
-  border-color:var(--accent);
-  color:#fff
-}
-
-.btn.solid:hover{
-  background:#ff4d86;
-  border-color:#ff4d86;
-  color:#fff
-}
-
-.btn.small{
-  padding:.5rem .9rem;
-  font-size:.8rem
-}
-
-section{
-  padding:4rem 1.25rem;
-  max-width:1000px;
-  margin:0 auto
-}
-
-h1,h2,h3{
-  font-family:var(--display);
-  font-weight:700;
-  line-height:1.1
-}
-
-h2{
-  font-size:clamp(1.9rem,6vw,2.8rem);
-  margin-bottom:.6rem
-}
-
-.lead{
-  color:var(--muted);
-  max-width:52ch
-}
-
-/* HERO */
-
-.hero{
-  padding-top:3.5rem;
-  padding-bottom:3rem
-}
-
-.hero small{
-  color:var(--gold);
-  font-weight:700;
-  letter-spacing:.08em
-}
-
-.hero h1{
-  font-size:clamp(3rem,15vw,7.5rem);
-  margin:.6rem 0 1rem
-}
-
-.hero h1 em{
-  font-style:italic;
-  font-weight:500;
-  color:var(--accent)
-}
-
-.hero p{
-  color:var(--muted);
-  font-size:1.1rem;
-  margin-bottom:1.6rem
-}
-
-.hero .cta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:.7rem
-}
-
-/* PRIZE */
-
-.prize{
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  text-align:center;
-  background:var(--bg-2);
-  max-width:none
-}
-
-.prize .amount{
-  font-family:var(--display);
-  font-size:clamp(3.5rem,18vw,8rem);
-  color:var(--gold);
-  line-height:1
-}
-
-.prize p{
-  color:var(--muted);
-  max-width:44ch;
-  margin:.8rem auto 0
-}
-
-/* REGISTER */
-
-form.register{
-  display:grid;
-  gap:.8rem;
-  max-width:480px;
-  margin-top:1.4rem
-}
-
-input{
-  width:100%;
-  background:var(--bg-2);
-  border:1px solid var(--line);
-  color:var(--paper);
-  padding:.8rem 1rem;
-  border-radius:10px;
-  font:500 1rem var(--body)
-}
-
-input::placeholder{
-  color:#8b7f93
-}
-
-.success{
-  color:#7ff0a8;
-  font-weight:700;
-  margin-top:.8rem
-}
-
-/* CONTESTANTS */
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
-  gap:1.2rem;
-  margin-top:1.6rem
-}
-
-.card{
-  background:var(--bg-2);
-  border:1px solid var(--line);
-  border-radius:16px;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column
-}
-
-.card .photo{
-  aspect-ratio:3/4;
-  background:linear-gradient(160deg,#2c1d38,#170f1c);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--muted);
-  font-size:.9rem
-}
-
-.card .photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover
-}
-
-.card .info{
-  padding:1rem 1.1rem 1.2rem;
-  display:grid;
-  gap:.25rem
-}
-
-.card h3{
-  font-size:1.4rem
-}
-
-.card .meta{
-  color:var(--muted);
-  font-size:.85rem
-}
-
-.card .votes{
-  font-weight:700;
-  color:var(--gold);
-  margin:.4rem 0 .6rem
-}
-
-/* PACKAGES */
-
-.packs{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:1rem;
-  margin-top:1.6rem
-}
-
-.pack{
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:1.4rem;
-  text-align:center;
-  background:var(--bg-2)
-}
-
-.pack h3{
-  font-size:1.3rem
-}
-
-.pack .price{
-  font-family:var(--display);
-  font-size:2.2rem;
-  color:var(--gold);
-  margin:.4rem 0 1rem
-}
-
-/* STEPS */
-
-.steps{
-  display:grid;
-  gap:1.4rem;
-  margin-top:1.6rem
-}
-
-.step{
-  display:flex;
-  gap:1rem;
-  align-items:flex-start
-}
-
-.step b{
-  font-family:var(--display);
-  font-size:1.6rem;
-  color:var(--accent);
-  min-width:2rem
-}
-
-.step h3{
-  font-size:1.25rem;
-  margin-bottom:.15rem
-}
-
-.step p{
-  color:var(--muted)
-}
-
-footer{
-  border-top:1px solid var(--line);
-  text-align:center;
-  padding:2.5rem 1.25rem;
-  color:var(--muted);
-  font-size:.9rem
-}
-
-footer .brand{
-  font-family:var(--display);
-  color:var(--paper);
-  font-size:1.1rem;
-  margin-bottom:.4rem
-}
-
-footer a{
-  color:var(--gold)
-}
-
-/* VOTE DIALOG */
-
-dialog{
-  margin:auto;
-  border:1px solid var(--line);
-  background:var(--bg-2);
-  color:var(--paper);
-  border-radius:18px;
-  padding:1.6rem;
-  width:min(92vw,400px)
-}
-
-dialog::backdrop{
-  background:rgba(0,0,0,.65)
-}
-
-dialog h3{
-  font-size:1.5rem;
-  margin-bottom:.2rem
-}
-
-dialog label{
-  display:block;
-  margin:1rem 0 .3rem;
-  color:var(--muted);
-  font-size:.9rem
-}
-
-dialog .total{
-  font-family:var(--display);
-  font-size:1.4rem;
-  margin:1rem 0
-}
-
-dialog .row{
-  display:flex;
-  gap:.6rem;
-  flex-wrap:wrap
-}
-
-@media(max-width:600px){
-  header.top .logo{
-    font-size:.85rem
+  :root{
+    --bg:#170f1c;
+    --bg-2:#20152a;
+    --paper:#f4ede4;
+    --muted:#b9aebf;
+    --accent:#e8336d;
+    --gold:#d9b26f;
+    --line:rgba(244,237,228,.16);
+    --display:"Bodoni Moda", Georgia, serif;
+    --body:"Manrope", system-ui, sans-serif;
   }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--paper);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 
-  header.top nav .btn{
-    padding:.45rem .65rem;
-    font-size:.7rem
-  }
-}
+  .demo-banner{background:var(--gold);color:#241a10;text-align:center;font-size:.85rem;font-weight:700;padding:.5rem 1rem}
+
+  header.top{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.25rem;border-bottom:1px solid var(--line)}
+  header.top .logo{font-family:var(--display);font-weight:700;font-size:1.05rem;letter-spacing:.02em}
+  header.top nav{display:flex;gap:.6rem}
+  .btn{display:inline-block;border:1px solid var(--paper);color:var(--paper);background:transparent;padding:.7rem 1.2rem;border-radius:999px;font:700 .9rem var(--body);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+  .btn:hover{background:var(--paper);color:var(--bg)}
+  .btn.solid{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn.solid:hover{background:#ff4d86;border-color:#ff4d86;color:#fff}
+  .btn.small{padding:.5rem .9rem;font-size:.8rem}
+
+  section{padding:4rem 1.25rem;max-width:1000px;margin:0 auto}
+  h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.1}
+  h2{font-size:clamp(1.9rem,6vw,2.8rem);margin-bottom:.6rem}
+  .lead{color:var(--muted);max-width:52ch}
+
+  /* Hero */
+  .hero{padding-top:3.5rem;padding-bottom:3rem}
+  .hero small{color:var(--gold);font-weight:700;letter-spacing:.08em}
+  .hero h1{font-size:clamp(3rem,15vw,7.5rem);margin:.6rem 0 1rem;font-weight:700}
+  .hero h1 em{font-style:italic;font-weight:500;color:var(--accent)}
+  .hero p{color:var(--muted);font-size:1.1rem;margin-bottom:1.6rem}
+  .hero .cta{display:flex;flex-wrap:wrap;gap:.7rem}
+
+  /* Prize */
+  .prize{border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;background:var(--bg-2);max-width:none}
+  .prize .amount{font-family:var(--display);font-size:clamp(3.5rem,18vw,8rem);color:var(--gold);line-height:1}
+  .prize p{color:var(--muted);max-width:44ch;margin:.8rem auto 0}
+
+  /* Register */
+  form.register{display:grid;gap:.8rem;max-width:480px;margin-top:1.4rem}
+  input,select{width:100%;background:var(--bg-2);border:1px solid var(--line);color:var(--paper);padding:.8rem 1rem;border-radius:10px;font:500 1rem var(--body)}
+  input::placeholder{color:#8b7f93}
+  .msg{color:var(--gold);font-weight:700;margin-top:.8rem;min-height:1.4rem}
+
+  /* Contestants */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.2rem;margin-top:1.6rem}
+  .card{background:var(--bg-2);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+  .card .photo{aspect-ratio:3/4;background:linear-gradient(160deg,#2c1d38,#170f1c);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.9rem}
+  .card .photo img{width:100%;height:100%;object-fit:cover}
+  .card .info{padding:1rem 1.1rem 1.2rem;display:grid;gap:.25rem}
+  .card h3{font-size:1.4rem}
+  .card .meta{color:var(--muted);font-size:.85rem}
+  .card .votes{font-weight:700;color:var(--gold);margin:.4rem 0 .6rem}
+
+  /* Packages */
+  .packs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.6rem}
+  .pack{border:1px solid var(--line);border-radius:16px;padding:1.4rem;text-align:center;background:var(--bg-2)}
+  .pack h3{font-size:1.3rem}
+  .pack .price{font-family:var(--display);font-size:2.2rem;color:var(--gold);margin:.4rem 0 1rem}
+
+  /* Steps */
+  .steps{display:grid;gap:1.4rem;margin-top:1.6rem}
+  .step{display:flex;gap:1rem;align-items:flex-start}
+  .step b{font-family:var(--display);font-size:1.6rem;color:var(--accent);min-width:2rem}
+  .step h3{font-size:1.25rem;margin-bottom:.15rem}
+  .step p{color:var(--muted)}
+
+  footer{border-top:1px solid var(--line);text-align:center;padding:2.5rem 1.25rem;color:var(--muted);font-size:.9rem}
+  footer .brand{font-family:var(--display);color:var(--paper);font-size:1.1rem;margin-bottom:.4rem}
+  footer a{color:var(--gold)}
+
+  /* Vote dialog */
+  dialog{margin:auto;border:1px solid var(--line);background:var(--bg-2);color:var(--paper);border-radius:18px;padding:1.6rem;width:min(92vw,400px)}
+  dialog::backdrop{background:rgba(0,0,0,.65)}
+  dialog h3{font-size:1.5rem;margin-bottom:.2rem}
+  dialog label{display:block;margin:1rem 0 .3rem;color:var(--muted);font-size:.9rem}
+  dialog .total{font-family:var(--display);font-size:1.4rem;margin:1rem 0}
+  dialog .row{display:flex;gap:.6rem;flex-wrap:wrap}
+
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
-
 <body>
 
 <header class="top">
   <div class="logo">New York Runway Star</div>
-
   <nav>
-    <a class="btn small"
-       href="https://www.instagram.com/newyorkrunwaystar/"
-       target="_blank"
-       rel="noopener">
-       Instagram
-    </a>
-
-    <a class="btn small solid" href="#register">
-      Enter now
-    </a>
+    <a class="btn small" href="https://www.instagram.com/newyorkrunwaystar/" target="_blank" rel="noopener">Instagram</a>
+    <a class="btn small solid" href="#register">Enter now</a>
   </nav>
 </header>
 
-
-<!-- HERO -->
-
 <section class="hero">
-
   <small>New York, 2026</small>
-
-  <h1>
-    Become the next
-    <em>runway star</em>
-  </h1>
-
-  <p>
-    Show your style. Build your profile. Let the audience vote.
-  </p>
-
+  <h1>Become the next <em>runway star</em></h1>
+  <p>Show your style. Build your profile. Let the audience vote.</p>
   <div class="cta">
-
-    <a class="btn solid" href="#register">
-      Register now
-    </a>
-
-    <a class="btn" href="#voting">
-      Vote for a star
-    </a>
-
+    <a class="btn solid" href="#register">Register now</a>
+    <a class="btn" href="#voting">Vote for a star</a>
   </div>
-
 </section>
-
-
-<!-- PRIZE -->
 
 <section class="prize">
-
-  <small style="color:var(--gold);font-weight:700;letter-spacing:.08em">
-    The grand prize
-  </small>
-
+  <small style="color:var(--gold);font-weight:700;letter-spacing:.08em">The grand prize</small>
   <div class="amount">$10,000</div>
-
-  <p>
-    Plus featured promotion, finalist recognition and a New York runway experience.
-  </p>
-
+  <p>Plus featured promotion, finalist recognition and a New York runway experience.</p>
 </section>
-
-
-<!-- REGISTRATION -->
 
 <section id="register">
-
   <h2>Enter the competition</h2>
-
-  <p class="lead">
-    Submit your details and contestant profile.
-  </p>
-
-  <form
-    class="register"
-    action="https://formsubmit.co/newyorkhunter99@gmail.com"
-    method="POST"
-  >
-
-    <input
-      type="text"
-      name="name"
-      placeholder="Full name"
-      required
-    >
-
-    <input
-      type="email"
-      name="email"
-      placeholder="Email address"
-      required
-    >
-
-    <input
-      type="text"
-      name="city"
-      placeholder="City, country"
-      required
-    >
-
-    <input
-      type="text"
-      name="insta"
-      placeholder="Instagram handle"
-    >
-
-    <!-- Email settings -->
-
-    <input
-      type="hidden"
-      name="_subject"
-      value="New York Runway Star 2026 - New Registration"
-    >
-
-    <input
-      type="hidden"
-      name="_template"
-      value="table"
-    >
-
-    <input
-      type="hidden"
-      name="_captcha"
-      value="true"
-    >
-
-    <!-- After successful submission -->
-
-    <input
-      type="hidden"
-      name="_next"
-      value="https://pawan557uio.github.io/Newyork-runway-star-2026/"
-    >
-
-    <button class="btn solid" type="submit">
-      Submit registration
-    </button>
-
+  <p class="lead">Submit your details and contestant profile.</p>
+  <form class="register" id="regForm">
+    <input type="text" name="name" placeholder="Full name" required>
+    <input type="email" name="email" placeholder="Email address" required>
+    <input type="text" name="city" placeholder="City, country" required>
+    <input type="text" name="insta" placeholder="Instagram handle">
+    <button class="btn solid" type="submit">Submit registration</button>
+    <div class="msg" id="regMsg" role="status"></div>
   </form>
-
 </section>
-
-
-<!-- CONTESTANTS -->
 
 <section id="voting">
-
   <h2>Vote for your favorite</h2>
-
-  <p class="lead">
-    Choose a contestant to continue.
-  </p>
-
+  <p class="lead">Choose a contestant to continue.</p>
   <div class="grid" id="contestants"></div>
-
 </section>
-
-
-<!-- VOTING PACKAGES -->
 
 <section id="packages">
-
   <h2>Choose your voting package</h2>
-
   <div class="packs" id="packs"></div>
-
 </section>
-
-
-<!-- HOW IT WORKS -->
 
 <section id="how">
-
   <h2>Simple. Transparent. Public.</h2>
-
   <div class="steps">
-
-    <div class="step">
-      <b>1</b>
-
-      <div>
-        <h3>Register</h3>
-        <p>Create your contestant profile.</p>
-      </div>
-    </div>
-
-    <div class="step">
-      <b>2</b>
-
-      <div>
-        <h3>Share</h3>
-        <p>Share your profile with your audience.</p>
-      </div>
-    </div>
-
-    <div class="step">
-      <b>3</b>
-
-      <div>
-        <h3>Get votes</h3>
-        <p>Votes are recorded through the official system.</p>
-      </div>
-    </div>
-
+    <div class="step"><b>1</b><div><h3>Register</h3><p>Create your contestant profile.</p></div></div>
+    <div class="step"><b>2</b><div><h3>Share</h3><p>Share your profile with your audience.</p></div></div>
+    <div class="step"><b>3</b><div><h3>Get votes</h3><p>Votes are recorded through the official system.</p></div></div>
   </div>
-
 </section>
-
-
-<!-- INSTAGRAM -->
 
 <section style="text-align:center">
-
   <h2>Follow New York Runway Star</h2>
-
-  <p
-    class="lead"
-    style="margin:0 auto 1.2rem"
-  >
-    Follow us on Instagram for updates, contestants and announcements.
-  </p>
-
-  <a
-    class="btn"
-    href="https://www.instagram.com/newyorkrunwaystar/"
-    target="_blank"
-    rel="noopener"
-  >
-    @newyorkrunwaystar
-  </a>
-
+  <p class="lead" style="margin:0 auto 1.2rem">Follow us on Instagram for updates, contestants and announcements.</p>
+  <a class="btn" href="https://www.instagram.com/newyorkrunwaystar/" target="_blank" rel="noopener">@newyorkrunwaystar</a>
 </section>
 
-
-<!-- FOOTER -->
-
 <footer>
-
-  <div class="brand">
-    New York Runway Star 2026
-  </div>
-
-  <p>
-    Official rules · Terms · Privacy · Contact
-  </p>
-
-  <p>
-    <a
-      href="https://www.instagram.com/newyorkrunwaystar/"
-      target="_blank"
-      rel="noopener"
-    >
-      Instagram @newyorkrunwaystar
-    </a>
-  </p>
-
-  <p style="margin-top:.8rem">
-    © 2026 New York Runway Star. All rights reserved.
-  </p>
-
+  <div class="brand">New York Runway Star 2026</div>
+  <p>Official rules · Terms · Privacy · Contact</p>
+  <p><a href="https://www.instagram.com/newyorkrunwaystar/" target="_blank" rel="noopener">Instagram @newyorkrunwaystar</a></p>
+  <p style="margin-top:.8rem">© 2026 New York Runway Star. All rights reserved.</p>
 </footer>
 
-
-<!-- VOTE DIALOG -->
-
+<!-- Vote dialog -->
 <dialog id="voteDialog">
-
   <h3>Cast your vote</h3>
-
-  <div
-    id="voteFor"
-    style="color:var(--muted)"
-  ></div>
-
-  <label for="voteCount">
-    Number of votes
-  </label>
-
-  <input
-    type="number"
-    id="voteCount"
-    min="1"
-    value="1"
-  >
-
-  <div class="total">
-    Total amount:
-    $<span id="voteTotal">1</span>
-  </div>
-
+  <div id="voteFor" style="color:var(--muted)"></div>
+  <label for="voteCount">Number of votes</label>
+  <input type="number" id="voteCount" min="1" value="1">
+  <div class="total">Total amount: $<span id="voteTotal">1</span></div>
   <div class="row">
-
-    <a
-      class="btn solid"
-      id="voteGo"
-      href="https://www.instagram.com/newyorkrunwaystar/"
-      target="_blank"
-      rel="noopener"
-    >
-      Continue to Instagram
-    </a>
-
-    <button
-      class="btn"
-      type="button"
-      id="voteClose"
-    >
-      Cancel
-    </button>
-
+    <a class="btn solid" id="voteGo" href="https://www.instagram.com/newyorkrunwaystar/" target="_blank" rel="noopener">Continue to Instagram</a>
+    <button class="btn" type="button" id="voteClose">Cancel</button>
   </div>
-
 </dialog>
 
-
 <script>
-
-/* =========================
-   CONTESTANTS
-========================= */
-
-const contestants = [
-
-  {
-    n:1,
-    name:"Mirella",
-    place:"New York City, USA 🇺🇸",
-    votes:1250,
-    photo:"Mirella.jpg"
-  },
-
-  {
-    n:2,
-    name:"Marco_michetii",
-    place:"Brooklyn, USA 🇺🇸",
-    votes:980,
-    photo:"Marco_michetii.jpg"
-  },
-
-  {
-    n:3,
-    name:"Canzy",
-    place:"Los Angeles, USA 🇺🇸",
-    votes:760,
-    photo:"Canzy.jpg"
-  },
-
-  {
-    n:4,
-    name:"Liliannapolanco",
-    place:"Miami, USA 🇺🇸",
-    votes:540,
-    photo:"Liliannapolanco.jpg"
+  // ---- Contestants ----
+  // Contestant 1 photo: upload "contestant1.jpg" in the same folder as this file
+  // Fictional avatar (simple silhouette) for demo contestants
+  function avatar(c1, c2){
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></linearGradient></defs><rect width="300" height="400" fill="url(#g)"/><circle cx="150" cy="150" r="56" fill="#fff" fill-opacity=".85"/><path d="M40 400c0-96 50-150 110-150s110 54 110 150z" fill="#fff" fill-opacity=".85"/></svg>`;
+    return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
   }
 
-];
+  const contestants = [
+    { n: 1, name: "Mirella", place: "New York City, USA 🇺🇸", votes: 1250, photo: "Mirella.jpg" },
+    { n: 2, name: "Marco_michetii", place: "Brooklyn, USA 🇺🇸", votes: 980, photo: ("Marco_michetii.jpg") },
+    { n: 3, name: "Canzy", place: "Los Angeles, USA 🇺🇸", votes: 760, photo: ("Canzy.jpg") },
+    { n: 4, name: "Liliannapolanco", place: "Miami, USA 🇺🇸", votes: 540, photo: ("Liliannapolanco.jpg") }
+  ];
 
+  const packs = [
+    { votes: 100,  price: 100 },
+    { votes: 300,  price: 300 },
+    { votes: 700,  price: 700 },
+    { votes: 1000, price: 1000 }
+  ];
 
-/* =========================
-   VOTING PACKAGES
-========================= */
+  const grid = document.getElementById("contestants");
+  contestants.forEach(c => {
+    const id = String(c.n).padStart(3, "0");
+    const photo = c.photo
+      ? `<img src="${c.photo}" alt="${c.name}" loading="lazy">`
+      : `<span>Photo coming soon</span>`;
+    grid.insertAdjacentHTML("beforeend", `
+      <article class="card">
+        <div class="photo">${photo}</div>
+        <div class="info">
+          <h3>${c.name}</h3>
+          ${c.place ? `<div class="meta">${c.place}</div>` : ""}
+          <div class="meta">Contestant #${id}</div>
+          <div class="votes">Votes: ${c.votes.toLocaleString()}</div>
+          <button class="btn solid small" data-name="${c.name}">Vote</button>
+        </div>
+      </article>`);
+  });
 
-const packs = [
+  const packsEl = document.getElementById("packs");
+  packs.forEach(p => {
+    packsEl.insertAdjacentHTML("beforeend", `
+      <div class="pack">
+        <h3>${p.votes.toLocaleString()} votes</h3>
+        <div class="price">$${p.price.toLocaleString()}</div>
+        <button class="btn small" data-votes="${p.votes}">Buy now</button>
+      </div>`);
+  });
 
-  {
-    votes:100,
-    price:100
-  },
+  // ---- Vote dialog ----
+  const dlg = document.getElementById("voteDialog");
+  const countEl = document.getElementById("voteCount");
+  const totalEl = document.getElementById("voteTotal");
+  const forEl = document.getElementById("voteFor");
+  const updateTotal = () => { totalEl.textContent = Math.max(1, parseInt(countEl.value || "1", 10)); };
+  countEl.addEventListener("input", updateTotal);
 
-  {
-    votes:300,
-    price:300
-  },
-
-  {
-    votes:700,
-    price:700
-  },
-
-  {
-    votes:1000,
-    price:1000
+  function openVote(name, votes){
+    forEl.textContent = name ? "Voting for " + name : "Choose a contestant above to vote for";
+    countEl.value = votes || 1;
+    updateTotal();
+    dlg.showModal();
   }
+  grid.addEventListener("click", e => {
+    const b = e.target.closest("button[data-name]");
+    if (b) openVote(b.dataset.name, 1);
+  });
+  packsEl.addEventListener("click", e => {
+    const b = e.target.closest("button[data-votes]");
+    if (b) openVote("", parseInt(b.dataset.votes, 10));
+  });
+  document.getElementById("voteClose").addEventListener("click", () => dlg.close());
+// ---- Registration -> email ----
+document.getElementById("regForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const form = e.target;
+  const msg = document.getElementById("regMsg");
+  const btn = form.querySelector("button[type=submit]");
 
-];
+  const data = Object.fromEntries(new FormData(form));
+  data._subject = "New Registration - New York Runway Star";
+  data._template = "table";
 
+  btn.disabled = true;
+  msg.textContent = "Submitting...";
 
-/* =========================
-   DISPLAY CONTESTANTS
-========================= */
-
-const grid =
-  document.getElementById("contestants");
-
-contestants.forEach(c => {
-
-  const id =
-    String(c.n).padStart(3,"0");
-
-  const photo = c.photo
-
-    ? `<img
-         src="${c.photo}"
-         alt="${c.name}"
-         loading="lazy"
-       >`
-
-    : `<span>Photo coming soon</span>`;
-
-  grid.insertAdjacentHTML(
-    "beforeend",
-
-    `
-    <article class="card">
-
-      <div class="photo">
-        ${photo}
-      </div>
-
-      <div class="info">
-
-        <h3>${c.name}</h3>
-
-        <div class="meta">
-          ${c.place}
-        </div>
-
-        <div class="meta">
-          Contestant #${id}
-        </div>
-
-        <div class="votes">
-          Votes: ${c.votes.toLocaleString()}
-        </div>
-
-        <button
-          class="btn solid small"
-          data-name="${c.name}"
-        >
-          Vote
-        </button>
-
-      </div>
-
-    </article>
-    `
-  );
-
-});
-
-
-/* =========================
-   DISPLAY PACKAGES
-========================= */
-
-const packsEl =
-  document.getElementById("packs");
-
-packs.forEach(p => {
-
-  packsEl.insertAdjacentHTML(
-
-    "beforeend",
-
-    `
-    <div class="pack">
-
-      <h3>
-        ${p.votes.toLocaleString()} votes
-      </h3>
-
-      <div class="price">
-        $${p.price.toLocaleString()}
-      </div>
-
-      <button
-        class="btn small"
-        data-votes="${p.votes}"
-      >
-        Buy now
-      </button>
-
-    </div>
-    `
-  );
-
-});
-
-
-/* =========================
-   VOTE DIALOG
-========================= */
-
-const dlg =
-  document.getElementById("voteDialog");
-
-const countEl =
-  document.getElementById("voteCount");
-
-const totalEl =
-  document.getElementById("voteTotal");
-
-const forEl =
-  document.getElementById("voteFor");
-
-
-function updateTotal(){
-
-  totalEl.textContent =
-    Math.max(
-      1,
-      parseInt(
-        countEl.value || "1",
-        10
-      )
-    );
-
-}
-
-
-countEl.addEventListener(
-  "input",
-  updateTotal
-);
-
-
-function openVote(name,votes){
-
-  forEl.textContent =
-    name
-      ? "Voting for " + name
-      : "Choose a contestant above to vote for";
-
-  countEl.value =
-    votes || 1;
-
-  updateTotal();
-
-  dlg.showModal();
-
-}
-
-
-grid.addEventListener(
-  "click",
-  e => {
-
-    const b =
-      e.target.closest(
-        "button[data-name]"
-      );
-
-    if(b){
-
-      openVote(
-        b.dataset.name,
-        1
-      );
-
+  try {
+    const res = await fetch("https://formsubmit.co/ajax/newyorkhunter99@gmail.com", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(data)
+    });
+    const out = await res.json();
+    if (res.ok && out.success !== "false") {
+      msg.textContent = "Thank you! Your registration has been received.";
+      form.reset();
+    } else {
+      throw new Error("failed");
     }
-
+  } catch (err) {
+    msg.textContent = "Something went wrong. Please try again.";
+  } finally {
+    btn.disabled = false;
   }
-);
-
-
-packsEl.addEventListener(
-  "click",
-  e => {
-
-    const b =
-      e.target.closest(
-        "button[data-votes]"
-      );
-
-    if(b){
-
-      openVote(
-        "",
-        parseInt(
-          b.dataset.votes,
-          10
-        )
-      );
-
-    }
-
-  }
-);
-
-
-
-
-
+});
+  // ---- Registration (demo: nothing is sent anywhere) ----
+  
+  });
 </script>
-
 </body>
 </html>
